@@ -1,5 +1,6 @@
 package com.med.rest.controller;
 
+import com.med.domain.Patient;
 import com.med.rest.dto.PatientDto;
 import com.med.service.PatientService;
 import lombok.RequiredArgsConstructor;
@@ -22,16 +23,20 @@ public class PatientController {
         return patientDtoList;
     }
 
-//    @PostMapping("/book")
-//    public BookDto insertBook(
-//            @RequestParam String nameBook,
-//            @RequestParam String nameAuthor,
-//            @RequestParam String nameGenre){
-//
-//        Book book = bookService.insert(nameBook, nameAuthor, nameGenre);
-//        return BookDto.toDto(book);
-//    }
-//
+    @PostMapping("/patient")
+    public PatientDto insertPatient(
+            @RequestParam String name,
+            @RequestParam String surname,
+            @RequestParam String patronymic,
+            @RequestParam int age,
+            @RequestParam String phone_number,
+            @RequestParam String email) {
+
+        Patient patient = patientService.insert(
+                name, surname, patronymic, age, phone_number, email);
+        return PatientDto.toDto(patient);
+    }
+
 //    @PutMapping("/book/{id}")
 //    public  BookDto updateBook(@PathVariable int id,
 //                               @RequestParam String nameBook,
