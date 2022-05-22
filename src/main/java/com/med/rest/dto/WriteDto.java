@@ -24,18 +24,18 @@ public class WriteDto {
 
     private String info;
 
-    private PatientDto patientDto;
-
-    private DoctorDto doctorDto;
+//    private PatientDto patientDto;
+//
+//    private DoctorDto doctorDto;
 
     public static WriteDto toDto(Write write) {
 
         return new WriteDto(
                 write.getId(),
                 write.getName(),
-                write.getInfo(),
-                PatientDto.toDto(write.getPatient()),
-                DoctorDto.toDto(write.getDoctor())
+                write.getInfo()
+//                PatientDto.toDto(write.getPatient()),
+//                DoctorDto.toDto(write.getDoctor())
         );
     }
 
