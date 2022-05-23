@@ -37,27 +37,31 @@ public class PatientController {
         return PatientDto.toDto(patient);
     }
 
-//    @PutMapping("/book/{id}")
-//    public  BookDto updateBook(@PathVariable int id,
-//                               @RequestParam String nameBook,
-//                               @RequestParam String nameAuthor,
-//                               @RequestParam String nameGenre){
-//
-//        Book book = bookService.update(id, nameBook, nameAuthor, nameGenre);
-//        return BookDto.toDto(book);
-//    }
-//
-//    @GetMapping("/book/{id}")
-//    public  BookDto getBookById(@PathVariable int id){
-//
-//        Book book = bookService.getById(id);
-//        return BookDto.toDto(book);
-//    }
-//
-//    @DeleteMapping("/book/{id}")
-//    public  void deleteBook(@PathVariable int id){
-//
-//        bookService.deleteById(id);
-//    }
+    @PutMapping("/patient/{id}")
+    public PatientDto updatePatient(
+            @PathVariable int id,
+            @RequestParam String name,
+            @RequestParam String surname,
+            @RequestParam String patronymic,
+            @RequestParam int age,
+            @RequestParam String phone_number,
+            @RequestParam String email) {
 
+        Patient patient = patientService.update(
+                id, name, surname, patronymic, age, phone_number, email);
+        return PatientDto.toDto(patient);
+    }
+
+    @GetMapping("patient/{id}")
+    public PatientDto getPatientById(@PathVariable int id) {
+
+        Patient patient = patientService.getById(id);
+        return PatientDto.toDto(patient);
+    }
+
+    @DeleteMapping("patient/{id}")
+    public void deletePatient(@PathVariable int id) {
+
+        patientService.deleteById(id);
+    }
 }
