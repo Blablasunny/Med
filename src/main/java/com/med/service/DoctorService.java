@@ -1,7 +1,6 @@
 package com.med.service;
 
 import com.med.domain.Doctor;
-import com.med.domain.Patient;
 
 import java.util.List;
 
@@ -20,8 +19,7 @@ public interface DoctorService {
                 String patronymic,
                 int age,
                 String phone_number,
-                String email,
-                List<Patient> patientList);
+                String email);
 
     List<Doctor> getAll();
 

@@ -140,30 +140,30 @@ public class DoctorServiceImplTest {
         assertThat(doctorList.get(2)).isEqualTo(doctor);
     }
 
-//    @DisplayName("Должен обновлять врача")
-//    @Test
-//    void shouldUpdateDoctor() {
-//
-//        Doctor expectedDoctor = Doctor.builder()
-//                .id(1)
-//                .name("Имя 4")
-//                .surname("Фамилия 4")
-//                .patronymic("Отчество 4")
-//                .age(50)
-//                .phone_number("+79854323212")
-//                .email("vas24@mail.ru")
-//                .build();
-//
-//        when(doctorRepository.save(expectedDoctor)).thenReturn(expectedDoctor);
-//
-//        Doctor doctor = doctorService.update(1,
-//                "Имя 4",
-//                "Фамилия 4",
-//                "Отчество 4",
-//                50,
-//                "+79854323212",
-//                "vas24@mail.ru");
-//
-//        assertThat(expectedDoctor).isEqualTo(doctor);
-//    }
+    @DisplayName("Должен обновлять врача")
+    @Test
+    void shouldUpdateDoctor() {
+
+        Doctor expectedDoctor = Doctor.builder()
+                .id(1)
+                .name("Имя 4")
+                .surname("Фамилия 4")
+                .patronymic("Отчество 4")
+                .age(50)
+                .phone_number("+79854323212")
+                .email("vas24@mail.ru")
+                .build();
+
+        when(doctorRepository.save(expectedDoctor)).thenReturn(expectedDoctor);
+
+        Doctor doctor = doctorService.update(1,
+                "Имя 4",
+                "Фамилия 4",
+                "Отчество 4",
+                50,
+                "+79854323212",
+                "vas24@mail.ru");
+
+        assertThat(expectedDoctor).isEqualTo(doctor);
+    }
 }

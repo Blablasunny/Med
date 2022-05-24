@@ -1,4 +1,4 @@
-name;surname;patronymic;age;phone_number;email;patient_id
-Сергей;Сергеев;Сергеевич;25;+79167899097;;1
-Артем;Ильин;Петрович;54;;;1
-Петр;Иванович;Петров;35;;il@mail.ru;2
+name;surname;patronymic;age;phone_number;email
+Сергей;Сергеев;Сергеевич;25;+79167899097;
+Артем;Ильин;Петрович;54;;
+Петр;Иванович;Петров;35;;il@mail.ru

@@ -38,10 +38,6 @@ public class Doctor {
     @Column(name = "email")
     private String email;
 
-    @OneToMany(targetEntity = Patient.class, fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "patient_id")
-    private List<Patient> patientList;
-
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "doctor", cascade = CascadeType.PERSIST)
     private List<Write> writeList;
 

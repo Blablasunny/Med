@@ -59,15 +59,6 @@
                 <constraints nullable="true"/>
             </column>
 
-            <column name="patient_id"
-                    type="NUMERIC(20,0)">
-
-                <constraints nullable="true"
-                             foreignKeyName="fk_doctor_patient"
-                             references="patient(id)"
-                             deleteCascade="false"/>
-            </column>
-
         </createTable>
 
     </changeSet>

@@ -49,16 +49,10 @@ public class DoctorController {
             @RequestParam String patronymic,
             @RequestParam int age,
             @RequestParam String phone_number,
-            @RequestParam String email,
-            @RequestParam List<Integer> patientList) {
-
-        List<Patient> patients = new ArrayList<>();
-        for (Integer i: patientList) {
-            patients.add(patientService.getById(i));
-        }
+            @RequestParam String email) {
 
         Doctor doctor = doctorService.update(
-                id, name, surname, patronymic, age, phone_number, email, patients);
+                id, name, surname, patronymic, age, phone_number, email);
         return DoctorDto.toDto(doctor);
     }
 
