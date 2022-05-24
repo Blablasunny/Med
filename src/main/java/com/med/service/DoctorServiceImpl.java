@@ -1,6 +1,7 @@
 package com.med.service;
 
 import com.med.domain.Doctor;
+import com.med.domain.Patient;
 import com.med.repository.DoctorRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,8 @@ public class DoctorServiceImpl implements DoctorService {
     private final DoctorRepository doctorRepository;
 
     @Override
-    public Doctor insert(String name, String surname, String patronymic, int age, String phone_number, String email) {
+    public Doctor insert(String name, String surname, String patronymic, int age,
+                         String phone_number, String email) {
 
         Doctor doctor = Doctor.builder()
                 .name(name)
@@ -29,7 +31,9 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
-    public Doctor update(int id, String name, String surname, String patronymic, int age, String phone_number, String email) {
+    public Doctor update(
+            int id, String name, String surname, String patronymic, int age,
+            String phone_number, String email, List<Patient> patientList) {
 
         Doctor doctor = Doctor.builder()
                 .id(id)
@@ -39,6 +43,7 @@ public class DoctorServiceImpl implements DoctorService {
                 .age(age)
                 .phone_number(phone_number)
                 .email(email)
+                .patientList(patientList)
                 .build();
 
         return doctorRepository.save(doctor);

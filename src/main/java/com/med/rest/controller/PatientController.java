@@ -52,14 +52,14 @@ public class PatientController {
         return PatientDto.toDto(patient);
     }
 
-    @GetMapping("patient/{id}")
+    @GetMapping("/patient/{id}")
     public PatientDto getPatientById(@PathVariable int id) {
 
         Patient patient = patientService.getById(id);
         return PatientDto.toDto(patient);
     }
 
-    @DeleteMapping("patient/{id}")
+    @DeleteMapping("/patient/{id}")
     public void deletePatient(@PathVariable int id) {
 
         patientService.deleteById(id);

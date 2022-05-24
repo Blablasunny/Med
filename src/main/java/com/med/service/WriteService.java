@@ -9,13 +9,15 @@ public interface WriteService {
     Write insert(String name,
                 String info,
                 int idPatient,
-                int idDoctor);
+                int idDoctor,
+                int idDay);
 
     Write update(int id,
                 String name,
                 String info,
                 int idPatient,
-                int idDoctor);
+                int idDoctor,
+                int idDay);
 
     List<Write> getAll();
 

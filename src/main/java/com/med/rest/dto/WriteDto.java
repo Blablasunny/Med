@@ -1,5 +1,6 @@
 package com.med.rest.dto;
 
+import com.med.domain.Day;
 import com.med.domain.Doctor;
 import com.med.domain.Patient;
 import com.med.domain.Write;
@@ -24,29 +25,33 @@ public class WriteDto {
 
     private String info;
 
-//    private PatientDto patientDto;
-//
-//    private DoctorDto doctorDto;
+    private int patientId;
+
+    private int doctorId;
+
+    private int dayId;
 
     public static WriteDto toDto(Write write) {
 
         return new WriteDto(
                 write.getId(),
                 write.getName(),
-                write.getInfo()
-//                PatientDto.toDto(write.getPatient()),
-//                DoctorDto.toDto(write.getDoctor())
+                write.getInfo(),
+                write.getPatient().getId(),
+                write.getDoctor().getId(),
+                write.getDay().getId()
         );
     }
 
-    public static Write toDomainObject(WriteDto writeDto, Patient patient, Doctor doctor) {
+    public static Write toDomainObject(WriteDto writeDto, Patient patient, Doctor doctor, Day day) {
 
         return new Write(
                 writeDto.getId(),
                 writeDto.getName(),
                 writeDto.getInfo(),
                 patient,
-                doctor
+                doctor,
+                day
         );
     }
 }

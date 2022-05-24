@@ -52,6 +52,15 @@
                              references="doctor(id)"
                              deleteCascade="true"/>
             </column>
+
+            <column name="day_id"
+                    type="VARCHAR(10)">
+
+                <constraints nullable="false"
+                             foreignKeyName="fk_write_day"
+                             references="day(id)"
+                             deleteCascade="true"/>
+            </column>
             
         </createTable>
         

@@ -34,4 +34,8 @@ public class Write {
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
 
+    @ManyToOne(targetEntity = Day.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "day_id")
+    private Day day;
+
 }

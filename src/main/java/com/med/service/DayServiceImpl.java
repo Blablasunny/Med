@@ -45,4 +45,10 @@ public class DayServiceImpl implements DayService {
 
         return dayRepository.getById(id);
     }
+
+    @Override
+    public void deleteById(int id) {
+
+        dayRepository.deleteById(id);
+    }
 }

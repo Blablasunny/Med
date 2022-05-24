@@ -15,4 +15,6 @@ public interface DayService {
 
     Day getById(int id);
 
+    void deleteById(int id);
+
 }

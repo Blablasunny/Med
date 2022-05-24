@@ -29,15 +29,6 @@
                 <constraints nullable="false"/>
             </column>
 
-            <column name="write_id"
-                    type="NUMERIC(20,0)">
-
-                <constraints nullable="true"
-                             foreignKeyName="fk_day_write"
-                             references="write(id)"
-                             deleteCascade="false"/>
-            </column>
-
         </createTable>
 
     </changeSet>

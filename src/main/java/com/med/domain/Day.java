@@ -23,8 +23,7 @@ public class Day {
     @Column(name = "date")
     private String date;
 
-    @OneToMany(targetEntity = Write.class, fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "write_id")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "day", cascade = CascadeType.PERSIST)
     private List<Write> writeList;
 
 }
