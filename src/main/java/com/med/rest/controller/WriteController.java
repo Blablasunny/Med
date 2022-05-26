@@ -2,6 +2,8 @@ package com.med.rest.controller;
 
 import com.med.domain.Write;
 import com.med.rest.dto.WriteDto;
+import com.med.service.DoctorService;
+import com.med.service.PatientService;
 import com.med.service.WriteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,8 @@ import java.util.stream.Collectors;
 public class WriteController {
 
     private  final WriteService writeService;
+    private  final PatientService patientService;
+    private  final DoctorService doctorService;
 
     @GetMapping("/write")
     public List<WriteDto> getAllWrite() {

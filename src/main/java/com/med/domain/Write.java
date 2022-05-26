@@ -26,11 +26,11 @@ public class Write {
     @Column(name = "info")
     private String info;
 
-    @ManyToOne(targetEntity = Patient.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Patient.class, cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
-    @ManyToOne(targetEntity = Doctor.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Doctor.class, cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
 

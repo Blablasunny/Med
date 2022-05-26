@@ -37,8 +37,4 @@ public class Patient {
 
     @Column(name = "email")
     private String email;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "patient", cascade = CascadeType.PERSIST)
-    private List<Write> writeList;
-
 }

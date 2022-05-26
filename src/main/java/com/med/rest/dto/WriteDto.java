@@ -25,9 +25,9 @@ public class WriteDto {
 
     private String info;
 
-    private int patientId;
+    private PatientDto patientDto;
 
-    private int doctorId;
+    private DoctorDto doctorDto;
 
     private int dayId;
 
@@ -37,20 +37,20 @@ public class WriteDto {
                 write.getId(),
                 write.getName(),
                 write.getInfo(),
-                write.getPatient().getId(),
-                write.getDoctor().getId(),
+                PatientDto.toDto(write.getPatient()),
+                DoctorDto.toDto(write.getDoctor()),
                 write.getDay().getId()
         );
     }
 
-    public static Write toDomainObject(WriteDto writeDto, Patient patient, Doctor doctor, Day day) {
+    public static Write toDomainObject(WriteDto writeDto, Day day) {
 
         return new Write(
                 writeDto.getId(),
                 writeDto.getName(),
                 writeDto.getInfo(),
-                patient,
-                doctor,
+                PatientDto.toDomainObject(writeDto.getPatientDto()),
+                DoctorDto.toDomainObject(writeDto.getDoctorDto()),
                 day
         );
     }

@@ -32,20 +32,7 @@ public class DoctorDto {
 
     private String email;
 
-    private List<WriteDto> writeDtoList;
-
     public static DoctorDto toDto(Doctor doctor) {
-
-        List<WriteDto> writeDtos = new ArrayList<>();
-        if (doctor.getWriteList() != null) {
-            writeDtos = doctor.getWriteList()
-                    .stream()
-                    .map(WriteDto::toDto)
-                    .collect(Collectors.toList());
-        }else {
-
-            writeDtos = new ArrayList<>();
-        }
 
         return new DoctorDto(
                 doctor.getId(),
@@ -54,12 +41,11 @@ public class DoctorDto {
                 doctor.getPatronymic(),
                 doctor.getAge(),
                 doctor.getPhone_number(),
-                doctor.getEmail(),
-                writeDtos
+                doctor.getEmail()
         );
     }
 
-    public static Doctor toDomainObject(DoctorDto doctorDto, List<Write> writes) {
+    public static Doctor toDomainObject(DoctorDto doctorDto) {
 
         return new Doctor(
                 doctorDto.getId(),
@@ -68,8 +54,7 @@ public class DoctorDto {
                 doctorDto.getPatronymic(),
                 doctorDto.getAge(),
                 doctorDto.getPhone_number(),
-                doctorDto.getEmail(),
-                writes
+                doctorDto.getEmail()
         );
     }
 }

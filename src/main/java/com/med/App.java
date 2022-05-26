@@ -15,10 +15,5 @@ public class App {
 
         ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
 
-        try {
-            Console.main(args);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 }
